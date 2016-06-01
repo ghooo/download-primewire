@@ -4,7 +4,7 @@
 # @Author: ghooo
 # @Date:   2016-05-14 08:59:58
 # @Last Modified by:   ghooo
-# @Last Modified time: 2016-06-01 05:53:21
+# @Last Modified time: 2016-06-01 05:59:29
 import mechanize
 import urllib2
 import urllib
@@ -94,8 +94,6 @@ def get_download_link(thevideo_url):
 		try:
 			r = load_from__url(semi_final_download_link)
 			soup = BeautifulSoup(r, "html.parser")
-			with open("out.html", "w") as text_file:
-				text_file.write(r)
 			ret = soup.find_all("div", {"class":"container main-container"})[0].find("a")['href']
 			break
 		except:
